@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Seo from '$lib/seo.svelte';
+	import type { AdditionalPostInfo, Post } from '../../../types';
 
-	export let data;
+	export let data: Post & AdditionalPostInfo;
 </script>
 
 <main>
@@ -13,7 +14,7 @@
 			day: 'numeric'
 		})}
 	</p>
-	<p class="prose prose-lg dark:prose-invert">{@html data.content}</p>
+	<p class="prose prose-neutral dark:prose-invert prose-img:rounded-md">{@html data.content}</p>
 </main>
 
 <Seo title={data.title} description={data.excerpt} type="Article" />

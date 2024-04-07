@@ -13,22 +13,10 @@
 
 <div>
 	<header>
-		<nav class="mb-16 flex w-full justify-between tracking-tight">
+		<nav class="mb-16 flex w-full items-center justify-between tracking-tight">
 			<div class="flex gap-2">
-				<a
-					href="/"
-					class={buttonVariants({
-						variant: 'link',
-						class: 'p-0'
-					})}>home</a
-				>
-				<a
-					href="/about"
-					class={buttonVariants({
-						variant: 'link',
-						class: 'p-0'
-					})}>about</a
-				>
+				<a href="/">home</a>
+				<a href="/about">about</a>
 			</div>
 
 			<ThemeSwitcher />

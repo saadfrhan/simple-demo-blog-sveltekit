@@ -1,21 +1,23 @@
-const db = new Map();
+import { premadeBlogPosts } from '$lib/data';
+import type { AdditionalPostInfo, Post } from '../../types';
+
+const db = new Map<string, Post & AdditionalPostInfo>();
 
 export const create = async ({
 	title,
 	slug,
 	content,
-	createdAt
-}: {
-	title: string;
-	slug: string;
-	content: string;
-	createdAt: Date;
-}) => {
+	createdAt,
+	excerpt
+}: Omit<Post & AdditionalPostInfo, 'id'>) => {
+	const id = db.size + 1;
 	db.set(slug, {
+		id,
 		slug,
 		title,
 		content,
-		createdAt
+		createdAt,
+		excerpt
 	});
 };
 
@@ -24,5 +26,7 @@ export const get = async (slug: string) => {
 };
 
 export const getAll = async () => {
-	return db.values();
+	db.set(premadeBlogPosts[0].slug, premadeBlogPosts[0]);
+	const result = Array.from(db.values());
+	return [...result];
 };

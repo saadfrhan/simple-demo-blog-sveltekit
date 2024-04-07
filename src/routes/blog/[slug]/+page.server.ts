@@ -1,7 +1,8 @@
 import { get } from '$lib/server/database';
+import type { Post, AdditionalPostInfo } from '../../../types/index.js';
 
-export function load({ params }) {
-	const post = get(params.slug);
+export async function load({ params }): Promise<Post & AdditionalPostInfo> {
+	const post = await get(params.slug);
 
 	if (post) {
 		return post;

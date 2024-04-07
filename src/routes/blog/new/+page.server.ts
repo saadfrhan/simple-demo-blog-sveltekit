@@ -18,7 +18,8 @@ export const actions: Actions = {
 			title: form.data.title,
 			content: form.data.content,
 			slug: form.data.title.toLowerCase().replace(/\s+/g, '-'),
-			createdAt: new Date()
+			createdAt: new Date(),
+			excerpt: form.data.excerpt
 		};
 		create(args);
 		throw redirect(303, `/blog/${args.slug}`);
