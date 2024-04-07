@@ -45,6 +45,9 @@
 					{/if}</Form.Label
 				>
 				<Textarea rows={6} {...attrs} bind:value={$formData.content} />
+				<Form.Description class="text-neutral-500 dark:text-neutral-400">
+					Only supports text & HTML for now.
+				</Form.Description>
 			</Form.Control>
 			<Form.FieldErrors />
 		</Form.Field>
