@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Seo from '$lib/seo.svelte';
+
 	export let data;
 </script>
 
@@ -11,5 +13,7 @@
 			day: 'numeric'
 		})}
 	</p>
-	<p class="prose prose-lg prose-invert">{@html data.content}</p>
+	<p class="prose prose-lg dark:prose-invert">{@html data.content}</p>
 </main>
+
+<Seo title={data.title} description={data.excerpt} type="Article" />

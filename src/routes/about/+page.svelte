@@ -1,3 +1,9 @@
-<h1 class="text-3xl font-bold">About</h1>
+<script>
+	import Seo from '$lib/seo.svelte';
+</script>
 
-<p class="mt-4">Welcome to the about page.</p>
+<h1 class="mb-8 text-2xl font-medium tracking-tighter">About</h1>
+
+<p>Welcome to the about page.</p>
+
+<Seo title="About" description="Learn more about me" type="WebPage" />
